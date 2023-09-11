@@ -4,6 +4,7 @@
 // @solution - closure - nesting a function that retains the input number even after the outer function returns
 
 
+//solved using closure
 function createCounter(num) {
     let counter = num
     return function () {
