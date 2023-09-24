@@ -7,7 +7,7 @@
 
 function plusOne(nums) {
     let number = nums.join("")
-    number = parseInt(number,10) + 1
+    number = BigInt(number) + 1n
     number = number.toString()
     return number.split("")
   }
