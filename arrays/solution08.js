@@ -1,7 +1,7 @@
 //description - given an array of nums, return the same array with all of the zeros moved to the end
 //params - {number[]} nums
 //return - {number[]}
-//solution - 2 pointer approach: create var that keeps track of the index's of the non-zero elements. Loop through the array and check if each element is equal to zero or not. If it is not equal to zero then assign its value to the array with the index of the non-zero var, and then assign the current index to zero. Afterwards, add one to hte non-zero variable. 
+//solution - 2 pointer approach: create var that keeps track of the index's where the non-zero elements will go. Loop through the array and check if each element is equal to zero or not. If it is not equal to zero then assign the index with non-zero var to index i and assing index i to 0. Afterwards, add one to the non-zero variable. 
 
 
 function moveZeros(nums) {
