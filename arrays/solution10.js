@@ -1,7 +1,7 @@
 //description - represent a partially filled sudoku board as nested arrays and return whether the board is correct at that point. (each row, column, and square cannot contain 2 of the same number)
 //params - {character[][]} board
 //return - {boolean}
-//solution - 
+//solution - rows: loop through each row, create a set, loop through each number in the row, if the number is not a period, check if the set has the number, if it does, return false, if it does not, add the number to the set. columns: loop through each row, create a set, loop through each number in the column, if the number is not a period, check if the set has the number, if it does, return false, if it does not, add the number to the set. squares: loop through each square, create a set, loop through each number in the square, if the number is not a period, check if the set has the number, if it does, return false, if it does not, add the number to the set. return true if all checks pass
 
 function isSudokuValid(board) {
     //check rows
