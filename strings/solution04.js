@@ -24,6 +24,6 @@ function isAnagram(a, b) {
   }
   
   
-  // console.log(isAnagram('hello', 'loehl')) // true
-  // console.log(isAnagram('ads', 'addd')) // false
+  console.log(isAnagram('hello', 'loehl')) // true
+  console.log(isAnagram('ads', 'addd')) // false
   console.log(isAnagram("rat", "car")) // false
