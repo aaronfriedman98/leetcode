@@ -1,0 +1,25 @@
+//description - find the longest common prefix among an array of strings
+//params - {strings[]} strings
+//return - {string}
+//solution - create a prefix var that initially is set to the entire first string, loop through the remaining strings, in each iteration set a counter var write a while loop that checks if the counter var is still less than the length of the current prefix and the current string and then it checks if each char is === to the other and adds 1 to the counter var if yes, it then loops to the last string and does the same process, the counter var at the end will contain the length of the common prefix, return the prefix
+
+function commonPrefix(strings) {
+  //set the prefix to the entire first string
+  let prefix = strings[0]
+  //loop through the remaining strings
+  for(let i = 1; i < strings.length; i++) {
+    let counter = 0
+    while(counter < prefix.length && counter < strings[i].length && prefix.charAt(counter) === strings[i].charAt(counter)) {
+      counter++
+    }
+    prefix = prefix.substring(0, counter)
+    if(prefix === ""){
+    return ""
+  }
+  }
+  return prefix
+}
+
+console.log(commonPrefix(["hello", "hel", "hi"])) // "h"
+console.log(commonPrefix(["hello", "hell", "hel"])) // "hel"
+console.log(commonPrefix(["hello", "hi", "there"])) // ""
