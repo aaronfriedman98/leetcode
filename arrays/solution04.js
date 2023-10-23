@@ -17,18 +17,26 @@ function duplicates(nums) {
   }
 
     //OPTIMIZED SOLUTION
-  function duplicates(nums) {
-    let numMap = new Map()
-    for(let i = 0; i < nums.length; i++) {
-      if(numMap.has(nums[i])) {
-        return true
+    function containsDuplicate(nums) {
+      // Create a Map to store the numbers we've seen
+      let numMap = new Map();
+    
+      // Iterate through the array
+      for (let i = 0; i < nums.length; i++) {
+        // If the current number already exists in the Map, return true (contains a duplicate)
+        if (numMap.has(nums[i])) {
+          return true;
+        }
+        // Otherwise, add the current number to the Map for future reference
+        else {
+          numMap.set(nums[i]);
+        }
       }
-      else {
-        numMap.set(nums[i], i)
-      }
+    
+      // If the loop completes without finding any duplicates, return false
+      return false;
     }
-    return false
-  }
+    
   
   console.log(duplicates([1,3,4,5,5,6,6])) //true
   console.log(duplicates([1,3,4,5,6,7])) //false
