@@ -21,6 +21,33 @@ function findSingle(nums) {
     return result
   }
   
+
+  //description - given an array of nums, where all of the numbers have duplicates besides for one, return the one unique number
+//params - {number[]} nums
+//return - {number}
+//solution - create a map object, loop through the array and each iteration set each value as a key in the map and the instances as its value, search the map for the only value that is === to 1 and return it
+
+function findUniqueNum(nums) {
+  //create map object
+  let numMap = new Map()
+
+  //iterate through nums and copy the numbers and instances as keys and values in the map
+  for(const num of nums) {
+    numMap.set(num, (numMap.get(num) || 0) + 1)
+  }
+
+  //set a variable to hold the result
+  let result = 0
+  
+  //loop through the map and search for the unique value (1)
+  numMap.forEach((instance, num) => {
+    if(instance === 1) {
+      result = num
+    }
+  })
+  return result
+}
+
   
   console.log(findSingle([1,2,3,4,1,3,4])) // 2
   console.log(findSingle([1])) // 1
