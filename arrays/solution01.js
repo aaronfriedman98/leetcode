@@ -19,12 +19,11 @@ function removeDuplicates(nums) {
       }
       return uniqueNumIndex
   }
-
-  
-  
-  
   
   console.log(removeDuplicates([1,1,1,2,3,5,5])) // 4
   console.log(removeDuplicates([1,1,2])) // 2
-  console.log(removeDuplicates([])) // 0
+  console.log(removeDuplicates([])) // 
+  
+  //in depth explanation:
+  ////solution - we need to keep track of unique values and where the unique values should be placed. So, initialize a var uniqueIndex which represents the index that needs to be replaced with a unique number. And i will find the unique numbers. Loop through the array and everytime you come across a unique value, assign the unique value index to the current value. What this accomplishes is that the uniqueIndex var will keep track of the index that we want to replace. And the loop will iterate over any duplicates until it finds a unique number to be placed in the uniqueIndex.
   
