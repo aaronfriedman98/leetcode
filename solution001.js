@@ -36,6 +36,7 @@ function findIndices(nums, target) {
     return []
   }
   
+
   
   console.log(findIndices([1,2,3,4,5], 9),' = [ 3, 4 ]')
   console.log(findIndices([4,3,8,9], 12),' = [ 0 , 2 ]')
