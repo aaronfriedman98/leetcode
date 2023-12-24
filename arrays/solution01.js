@@ -7,7 +7,6 @@
 // STEP 3: check if index[i] is unique, if yes then swap it with index[uniqueNumIndex] and then uniqueNumIndex++
 // STEP 4: return uniqueNumIndex, which should be equal to the number of unique numbers
 
-
 function removeDuplicates(nums) {
     if(nums.length === 0) {
       return 0
