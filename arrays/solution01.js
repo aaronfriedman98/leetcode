@@ -28,5 +28,5 @@ function removeDuplicates(nums) {
   console.log(removeDuplicates([1,1,2])) // 2
   console.log(removeDuplicates([])) //
   
-  //REFLECTION - Failed
+  //REFLECTION - Failed attempt 1
 //understood the concept of 2 pointer approach, where one pointer keeps track of the unique number index while the other pointer (i) kept track of the unique numbers that needed to be placed in the correct index. But failed to understand the if statement within the loop that we must compare the current index (i) with the number right before it. I thought i should be compared to the unique number index, but that got rid of the 2nd unique number immediately after the default unique number (in an array that has a unique starting number).
