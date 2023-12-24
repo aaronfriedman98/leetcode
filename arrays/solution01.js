@@ -1,7 +1,11 @@
-//description - pass in an array of nums in ascending order, and remove all of the duplicates in place and return the number of unique elements
+//description - given an array of non-decreasing nums, remove the duplicates in-place so that each unique number appears only once, and then return the number of unique elements
 //params - {number[]} nums
 //return - {number}
-//solution - create var for the unique number index and set it to one since there is automatically one unique value. Loop through the array starting from the 2nd index since the first element is automatically a unique number. Compare the 2nd index of the array with the first index of the array, if they are the same then continue, if they are different, then first assign the value of nums[uniqueNumber] to nums[i], and then add 1 to the unique number var. This will effectively place all of the unique numbers in the beginning of the array. Then return the unique number var.
+//solution - 2 pointer approach:
+// STEP 1: initialize var uniqueNumIndex to keep track of where we want the unique numbers to be placed. Initialize it to 1 because index[0] is automatically in the correct place
+// STEP 2: loop through the array starting from index[1] since index[0] is automatically unique
+// STEP 3: check if index[i] is unique, if yes then swap it with index[uniqueNumIndex] and then uniqueNumIndex++
+// STEP 4: return uniqueNumIndex, which should be equal to the number of unique numbers
 
 
 function removeDuplicates(nums) {
@@ -19,11 +23,11 @@ function removeDuplicates(nums) {
       }
       return uniqueNumIndex
   }
-  
+
+  console.log(removeDuplicates([1, 2, 2, 3, 3, 3, 4])); // 4 ([1,2,3,4,_,_,_])
   console.log(removeDuplicates([1,1,1,2,3,5,5])) // 4
   console.log(removeDuplicates([1,1,2])) // 2
-  console.log(removeDuplicates([])) // 
+  console.log(removeDuplicates([])) //
   
-  //in depth explanation:
-  ////solution - we need to keep track of unique values and where the unique values should be placed. So, initialize a var uniqueIndex which represents the index that needs to be replaced with a unique number. And i will find the unique numbers. Loop through the array and everytime you come across a unique value, assign the unique value index to the current value. What this accomplishes is that the uniqueIndex var will keep track of the index that we want to replace. And the loop will iterate over any duplicates until it finds a unique number to be placed in the uniqueIndex.
-  
+  //REFLECTION - Failed
+//understood the concept of 2 pointer approach, where one pointer keeps track of the unique number index while the other pointer (i) kept track of the unique numbers that needed to be placed in the correct index. But failed to understand the if statement within the loop that we must compare the current index (i) with the number right before it. I thought i should be compared to the unique number index, but that got rid of the 2nd unique number immediately after the default unique number (in an array that has a unique starting number).
