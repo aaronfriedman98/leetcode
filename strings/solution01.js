@@ -17,7 +17,7 @@
 function reverseString(string) {
     const len = Math.floor(string.length/2)
     for(let i = 0; i < len; i++) {
-      let temp = ""
+      let temp
       temp = string[i]
       string[i] = string[string.length - 1 - i]
       string[string.length - 1 - i] = temp
@@ -31,3 +31,4 @@ function reverseString(string) {
 
 //REFLECTION - Passed/failed  attempt 1
 //passed with the simple solution of using the reverse() array method. But failed first attempt to perform the reversal through brute force.
+//REFLECTION - Passed attempt 2
