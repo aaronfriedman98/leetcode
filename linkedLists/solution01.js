@@ -1,74 +1,59 @@
-//description - write a function that takes in a specific node of a linked list and deletes that node
-//params = {listNode} node
-//return = {void}
+//description - There is singly-linked list (head) and we need a method that when given a specific node (based on location of linkedList.head.next..etc..) that node will be removed out of the flow of the linked list. We are given a LinkedList structure already containing nodes. We just need a stand alone function that when given a specific node, that node will be deleted from the list.
+//params - {ListNode} node
+//return - void
+//solution - to delete the given node, we can simply assign its val the val of the node that comes after it and then assign its next value to the one that comes after it. What this does is the node that we want to delete becomes the node that comes after it (.val and .next), and therefore, the node that comes after it is now out of the flow of the linked list.
 
-//delete Node function
-// function deleteNode(node) {
-//   node.val = node.next.val
-//   node.next = node.next.next
-// }
+//delete node function
+function deleteNode(node) {
+  node.val = node.next.val
+  node.next = node.next.next
+}
 
+// Test Case with example
+
+//node constructor function
+function ListNode(val) {
+  this.val = val
+  this.next = null
+}
+
+//linked list contructor function
+function LinkedList() {
+  this.head = null
+
+  this.append = function(val) {
+    const newNode = new ListNode(val)
+    if(!this.head) {
+      this.head = newNode
+    }
+    else {
+      current = this.head
+      while(current.next) {
+        current = current.next
+      }
+      current.next = newNode
+    }
+  }
+
+  this.print = function() {
+    current = this.head
+    while(current) {
+      console.log(current.val)
+      current = current.next
+    }
+  }
+}
 
 //test case
-class Node {
-    constructor(val) {
-      this.val = val;
-      this.next = null; // Reference to the next node
-    }
-  }
-  
-  class LinkedList {
-    constructor() {
-      this.head = null; // Reference to the first node in the list
-      this.tail = null; // Reference to the last node in the list
-    }
-    append(value) {
-      const newNode = new Node(value);
-      if (!this.head) {
-        this.head = newNode;
-        this.tail = newNode;
-      } else {
-        this.tail.next = newNode;
-        this.tail = newNode;
-      }
-    }
-    toArray() {
-      const result = [];
-      let current = this.head;
-      while (current) {
-        result.push(current.val);
-        current = current.next;
-      }
-      return result;
-    }
-    deleteNode(nodeToDelete) {
-      if (!nodeToDelete || !nodeToDelete.next) {
-        // Unable to delete the node if it's null or the last node
-        return;
-      }
-      nodeToDelete.val = nodeToDelete.next.val;
-      nodeToDelete.next = nodeToDelete.next.next;
-    }
-  }
-  
-  const linkedList = new LinkedList();
-  
-  // Append nodes to the linked list
-  linkedList.append(1);
-  linkedList.append(2);
-  linkedList.append(3);
-  linkedList.append(4);
-  linkedList.append(5);
-  
-  // Print the initial linked list
-  console.log("Initial Linked List:");
-  console.log(linkedList.toArray()); // Output: [1, 2, 3, 4, 5]
-  
-  // Delete a specific node (e.g., the node with value 3)
-  const nodeToDelete = linkedList.head.next.next; // Node with value 3
-  linkedList.deleteNode(nodeToDelete);
-  
-  // Print the modified linked list after deletion
-  console.log("Linked List After Deletion:");
-  console.log(linkedList.toArray()); // Output: [1, 2, 4, 5]
-  
+const linkedList = new LinkedList()
+linkedList.append(1)
+linkedList.append(2)
+linkedList.append(3)
+linkedList.append(4)
+linkedList.print()
+
+const nodeToDelete = linkedList.head.next
+deleteNode(nodeToDelete)
+
+linkedList.print()
+
