@@ -57,3 +57,5 @@ deleteNode(nodeToDelete)
 
 linkedList.print()
 
+//REFLECTION - failed attempt 1
+//needed a refresher on linked lists. 
