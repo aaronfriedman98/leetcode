@@ -80,3 +80,7 @@ const head = linkedList.head;
 console.log(deleteNthNodeFromEnd(head, 2)); //1
 
 linkedList.print(); // 1 > 2 > 4
+
+
+//REFLECTION - failed attempt 1
+//Had trouble locating the nth node from the end. Also needed to remember to create a dummy node to handle the edge case of the head node being removed.
