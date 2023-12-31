@@ -59,3 +59,5 @@ linkedList.print()
 
 //REFLECTION - failed attempt 1
 //needed a refresher on linked lists. 
+//REFLECTION - half passed attempt 2
+//completely understood the logic, just forgot that to access the current value of a node, we must use .val. And looked at the solution before testing it and attempting to debug.
