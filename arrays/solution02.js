@@ -26,7 +26,8 @@ console.log(maxProfit([2,6,1,5,7,8]))// 11
 console.log(maxProfit([3,1,5,6,4,22,4])) // 23
 
 //Reflection - success Attempt 1
-//made a small mistake initially and instead of comparing the numbers within the array (array[i]), I compared the the actual index's (i). But quickly realized the problem and got the correct solution.  
+//made a small mistake initially and instead of comparing the numbers within the array (array[i]), I compared the the actual index's (i). But quickly realized the problem and got the correct solution. 
+//Reflection - success Attempt 2 
 
   
   
