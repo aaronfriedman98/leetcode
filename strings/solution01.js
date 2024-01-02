@@ -32,3 +32,5 @@ function reverseString(string) {
 //REFLECTION - Passed/failed  attempt 1
 //passed with the simple solution of using the reverse() array method. But failed first attempt to perform the reversal through brute force.
 //REFLECTION - Passed attempt 2
+//REFLECTION - Passed attempt 3
+//for brute force approach, had a little hesitation realizing that the loop should only iterate halfway down the array. Also, realized that Math.floor is not necessary. The loop ignores the decimal automatically.
