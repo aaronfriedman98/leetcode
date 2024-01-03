@@ -27,3 +27,4 @@ console.log(findUniqueChar("aabbc")) // 4
 
 //REFLECTION - Failed attempt 1
 //remember how to set keys and values in a map object. But forgot how to search the map for the index of the first unique char, by looping through the string and returning i.
+//REFLECTION - success attempt 2
