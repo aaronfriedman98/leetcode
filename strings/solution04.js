@@ -1,7 +1,11 @@
-//description - given 2 strings, return true if they are anagrams and false if not
-//params - {string} a, {string} b
+//description - given 2 strings, return true if they are anagrams, otherwise return false
+//params - {string} str1, {string} str2
 //return - {boolean}
-//solution - create 2 map objects and copy both strings into the maps keeping track of the amount of each char, compare each char and amount and return true or false
+//solution - use hashmap approach
+//Step 1: first compare the length of both stings to see if they are even the same length. If not, then return false.
+//Step 2: create 2 map objects that will be used to store the values and frequencies of both strings.
+//Step 3: loop through the length of the strings and save the values and frequencies of each string to its map object.
+//Step 4: loop through the keys of one of the maps and in each iteration check if the values and keys equal the values and keys of the 2nd map. Return true or false.
 
 function isAnagram(a, b) {
     let mapA = new Map()
@@ -27,3 +31,6 @@ function isAnagram(a, b) {
   console.log(isAnagram('hello', 'loehl')) // true
   console.log(isAnagram('ads', 'addd')) // false
   console.log(isAnagram("rat", "car")) // false
+
+  //REFLECTION - Failed attempt 1
+  //didnt know that i can iterate through the keys of a map object. Now i can compare 2 map objects to see if their values and frequencies are equal. Before i was trying to compare values from a string to a map but had issues comparing the frequencies.
