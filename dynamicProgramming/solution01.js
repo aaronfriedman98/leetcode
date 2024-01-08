@@ -1,12 +1,21 @@
-//description - it takes n steps to climb the stairs, you can either climb 1 or 2 steps at a time, how many variations are there of climbing all of the steps
+//description - given a number n that represents the amount of stairs in a staircase, you can either climb 1 or 2 steps at a time, how many variations are there of climbing all of the steps.
 //params - {number} n
 //return - {number}
-//solution - Fibonacci sequence method: first check if n is <= 1 and if yes then return 1 (if it is 0 then there is 1 way - do nothing, and if it is one then there is 1 way), create an array to store the number of ways in each step and initialize the length of the array to be n+1, assign 1 to array[0] and array[0] since at those steps we know the solution is only 1 (and starting the loop from these steps will interfere with the algorithm), loop through the array starting from array[2] and assign that index the sum of the 2 index's previous, return array[n]
+//solution - Fibonacci Sequence:
+//Step 1: first check if n is === 0, and if yes then return 0. Then check if n is === 1 and if yes then return 1.
+//Step 2: initialize var ways as an array with a set length of (n + 1). This array will be used to store all of the variations for each corresponding step. We set the array length to n + 1 so that we can ignore ways[0] and the arrays index will directly correspond to the number of steps (just makes it more readable).
+//Step 3: set ways[1] to 1, and ways[2] to 2. There is only 1 variation for step 1 and only 2 variations for step 2. This will act as the base case for solving the rest of the steps dynamically, based on the Fibonacci Sequence.
+//Step 4: write a for loop that runs up to and including n, starting from 3 (since index 1 and index 2 are already filled and are the base case).
+//Step 5: in each iteration, to calculate the amount of variations for each stair, find the sum of ways[i - 1] and ways[i - 2], and push this value to ways[i]
+//Step 6: return ways[n]
 
 function climbStairs(n) {
-    //check if n is === to 0 or 1
-    if(n <= 1) {
-      return 1 // if there is 0 or 1 steps, then there is only 1 way
+    //simple answers
+    if(n === 0) {
+      return 0
+    }
+    if(n === 1) {
+      return 1
     }
   
     //initialize an array to store all of the different ways for each step
@@ -31,3 +40,27 @@ function climbStairs(n) {
   console.log(climbStairs(4)) // 5
   console.log(climbStairs(5)) // 8
   
+
+
+function climbStairs(n) {
+  //simple answers
+  if(n === 0) {
+    return 0
+  }
+  if(n === 1) {
+    return 1
+  }
+  //initialize an array to store all the variations for each stair
+  let ways = new Array(n + 1)
+
+  //base cases
+  ways[1] = 1
+  ways[2] = 2
+
+  for(let i = 3; i <= n; i++) {
+    ways[i] = ways[i - 1] + ways[i - 2]
+  }
+  return ways[n]
+}
+
+console.log(climbStairs(3)) // 3
