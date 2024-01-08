@@ -40,27 +40,5 @@ function climbStairs(n) {
   console.log(climbStairs(4)) // 5
   console.log(climbStairs(5)) // 8
   
-
-
-function climbStairs(n) {
-  //simple answers
-  if(n === 0) {
-    return 0
-  }
-  if(n === 1) {
-    return 1
-  }
-  //initialize an array to store all the variations for each stair
-  let ways = new Array(n + 1)
-
-  //base cases
-  ways[1] = 1
-  ways[2] = 2
-
-  for(let i = 3; i <= n; i++) {
-    ways[i] = ways[i - 1] + ways[i - 2]
-  }
-  return ways[n]
-}
-
-console.log(climbStairs(3)) // 3
+  //REFLECTION - failed attempt 1
+  //forgot the logic of using the Fibonacci Sequence to solve this problem

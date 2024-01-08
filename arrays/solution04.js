@@ -1,43 +1,23 @@
-//description - check if an array contains any duplicate values, return true or false
-//params - {numbers[]} nums
+//description - given an array of numbers (nums), return true if any number appears twice, and false if all the numbers are unique.
+//params - {number[]} nums
 //return - {boolean}
-//solution - create another array, loop through the original array and copy each value to the new array, and in each iteration loop through the 2nd array and check for duplicate values
-//optimized solution - create a Map object, loop through the array and check if the Map has the current value, if it does then return true, if it doesn't then add the value to the Map and continue looping. If the loop finishes then return false
+//solution - hashmap approach:
+//Step 1: create a map object. This will be used to store all of the values as we traverse the array.
+//Step 2: loop through each element of the array and first check if that value exists in the map object and if yes return true, and if not then save that value into the map object for future checks
+//Step 3: outside of the loop, return false. (if the loop ends then all the numbers must be unique.)
 
-function duplicates(nums) {
-    let tempArray = []
-    tempArray.push(nums[0])
-    for(let i = 1; i < nums.length; i++) {
-      for(let j = 0; j < tempArray.length; j++) {
-        if(nums[i] === tempArray[j]) {
-          return true
-        }
-      } tempArray.push(nums[i])
-    } return false
-  }
-
-    //OPTIMIZED SOLUTION
-    function containsDuplicate(nums) {
-      // Create a Map to store the numbers we've seen
-      let numMap = new Map();
-    
-      // Iterate through the array
-      for (let i = 0; i < nums.length; i++) {
-        // If the current number already exists in the Map, return true (contains a duplicate)
-        if (numMap.has(nums[i])) {
-          return true;
-        }
-        // Otherwise, add the current number to the Map for future reference
-        else {
-          numMap.set(nums[i]);
-        }
-      }
-    
-      // If the loop completes without finding any duplicates, return false
-      return false;
+function isDuplicate(nums) {
+  let mappedNums = new Map()
+  for(num of nums) {
+    if(mappedNums.has(num)) {
+      return true
     }
-    
-  
-  console.log(duplicates([1,3,4,5,5,6,6])) //true
-  console.log(duplicates([1,3,4,5,6,7])) //false
-  
+    mappedNums.set(num)
+  }
+  return false
+}
+
+console.log(isDuplicate([1,2,3,4,5,4])) // true
+console.log(isDuplicate([1,2,3,4,5])) // false
+
+//REFLECTION - Success Attempt 1
